@@ -1,7 +1,7 @@
 (ns project-scoper.events
   (:require [re-frame.core :as re-frame]
-            [project-scoper.db :as db]
-            ))
+            [project-scoper.db :as db]))
+
 
 (re-frame/reg-event-db
  ::initialize-db
@@ -9,6 +9,6 @@
    db/default-db))
 
 (re-frame/reg-event-db
- ::set-active-panel
- (fn [db [_ active-panel]]
-   (assoc db :active-panel active-panel)))
+ ::set-active-view
+ (fn [db [_ active-view]]
+   (assoc db :active-view active-view)))

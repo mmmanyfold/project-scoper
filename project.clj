@@ -30,7 +30,7 @@
 
     :plugins      [[lein-figwheel "0.5.13"]
                    [lein-doo "0.1.8"]]}
-   :prod { }}
+   :prod {}}
 
   :cljsbuild
   {:builds
@@ -44,8 +44,8 @@
                     :source-map-timestamp true
                     :preloads             [devtools.preload
                                            re-frisk.preload]
-                    :external-config      {:devtools/config {:features-to-install :all}}
-                    }}
+                    :external-config      {:devtools/config {:features-to-install :all}}}}
+
 
     {:id           "min"
      :source-paths ["src/cljs"]
@@ -60,7 +60,4 @@
      :compiler     {:main          project-scoper.runner
                     :output-to     "resources/public/js/compiled/test.js"
                     :output-dir    "resources/public/js/compiled/test/out"
-                    :optimizations :none}}
-    ]}
-
-  )
+                    :optimizations :none}}]})

@@ -3,7 +3,7 @@
             [re-frame.core :as re-frame]
             [project-scoper.events :as events]
             [project-scoper.routes :as routes]
-            [project-scoper.views :as views]
+            [project-scoper.app :as app]
             [project-scoper.config :as config]))
 
 
@@ -14,7 +14,7 @@
 
 (defn mount-root []
   (re-frame/clear-subscription-cache!)
-  (reagent/render [views/main-panel]
+  (reagent/render [app/app-view]
                   (.getElementById js/document "app")))
 
 (defn ^:export init []
