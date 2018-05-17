@@ -22,6 +22,10 @@
   ;; define routes here
   (defroute "/" []
     (rf/dispatch [::events/set-active-view :start-view]))
+  (defroute "/type" []
+    (rf/dispatch [::events/set-active-view :select-type]))
+  (defroute "/web/primary" []
+    (rf/dispatch [::events/set-active-view :web-select-primary]))
 
 
   ;; --------------------

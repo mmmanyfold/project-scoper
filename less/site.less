@@ -35,9 +35,8 @@ h2 {
   padding: 2px 8px 2px 6px;
 }
 
-a {
-  text-decoration: underline;
-  color: @offwhite;
+a:hover {
+  text-decoration: none;
 }
 
 header {
@@ -92,4 +91,30 @@ header {
       font-style: italic;
     }
   }
+}
+
+.bubbles-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.bubble {
+  font-size: 1.5em;
+  text-align: center;
+  border-radius: 50% 50%;
+  border: 2px solid;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 1em;
+  padding: 1em;
+  .text { width: 100% }
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
 }
