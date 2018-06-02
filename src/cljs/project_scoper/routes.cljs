@@ -25,10 +25,12 @@
     (rf/dispatch [::events/set-active-view :start-view]))
   (defroute "/:path/" []
     (rf/dispatch [::events/set-active-view :select-type]))
-  (defroute "/:path/:type/" []
+  (defroute "/:path/website/" []
     (rf/dispatch [::events/set-active-view :web-select-primary]))
-  (defroute "/:path/:type/:primary/" []
+  (defroute "/:path/website/:primary/" []
     (rf/dispatch [::events/set-active-view :web-select-secondary]))
+  (defroute "/:path/website/:primary/:secondary/" []
+    (rf/dispatch [::events/set-active-view :web-select-platform]))
 
 
   ;; --------------------

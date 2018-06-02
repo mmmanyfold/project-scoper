@@ -5,7 +5,8 @@
             [project-scoper.views.start :refer [start-view]]
             [project-scoper.views.select-type :refer [select-type]]
             [project-scoper.views.web-select.primary :refer [web-select-primary]]
-            [project-scoper.views.web-select.secondary :refer [web-select-secondary]]))
+            [project-scoper.views.web-select.secondary :refer [web-select-secondary]]
+            [project-scoper.views.web-select.platform :refer [web-select-platform]]))
 
 (defn- views [view-name]
        (case view-name
@@ -13,6 +14,7 @@
              :select-type [select-type]
              :web-select-primary [web-select-primary]
              :web-select-secondary [web-select-secondary]
+             :web-select-platform [web-select-platform]
              [:div]))
 
 (defn app-view []

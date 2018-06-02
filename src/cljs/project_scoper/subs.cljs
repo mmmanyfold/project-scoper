@@ -30,3 +30,13 @@
   ::secondary
   (fn [db _]
     (:secondary db)))
+
+(re-frame/reg-sub
+  ::platform?
+  (fn [db _]
+    (:platform? db)))
+
+(re-frame/reg-sub
+  ::platform-name
+  (fn [db _]
+    (:platform-name db)))
