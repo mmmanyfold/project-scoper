@@ -1,5 +1,9 @@
 (ns project-scoper.components.bubble
-  (:require [re-frame.core :as rf]))
+  (:require [re-frame.core :as rf]
+            [reagent.core :as reagent]
+            [project-scoper.events :as events]
+            [project-scoper.subs :as subs]
+            [project-scoper.helpers :refer [keywordize-name]]))
 
 (def colors {:red "#EB5757"
              :green "#6FCF97"
@@ -7,10 +11,16 @@
              :purple "#BB6BD9"
              :yellow "#F2C94C"})
 
-(defn bubble [color-key text & [event]]
-  (let [color-val (some #(when (= color-key (first %)) (second %)) colors)]
-    ; TODO: add selection functionality
+(defn bubble [color-key text db-key]
+  (let [color-val (color-key colors)
+        db-value (keywordize-name text)
+        selected? (= @(rf/subscribe [(keyword (str "project-scoper.subs/" (name db-key)))]) db-value)]
     [:div.bubble {:style {:border-color color-val
-                          :color color-val}
-                  :on-click #(rf/dispatch event)}
+                          :background-color (if selected?
+                                              color-val
+                                              "white")
+                          :color (if selected?
+                                   "white"
+                                   color-val)}
+                  :on-click #(rf/dispatch [::events/set-value db-key db-value])}
       [:div.text text]]))

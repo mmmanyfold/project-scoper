@@ -12,3 +12,8 @@
  ::set-active-view
  (fn [db [_ active-view]]
    (assoc db :active-view active-view)))
+
+(re-frame/reg-event-db
+  ::set-value
+  (fn [db [_ db-key value]]
+    (assoc db db-key value)))
