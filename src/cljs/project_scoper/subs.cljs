@@ -5,3 +5,8 @@
  ::active-view
  (fn [db _]
    (:active-view db)))
+
+(re-frame/reg-sub
+  ::path
+  (fn [db _]
+    (:path db)))
