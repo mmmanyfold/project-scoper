@@ -11,4 +11,6 @@
    [:div.bubbles-wrap
     [bubble :green "start from scratch" :path]
     [bubble :blue "build on an existing project" :path]]
-   [controls nil "type"]])
+   (let [path @(rf/subscribe [::subs/path])]
+     (if-not (nil? path)
+       [controls false (name path)]))])
