@@ -13,5 +13,5 @@
     [bubble :blue "mobile app" :type]
     [bubble :purple "service or integration" :type]
     [bubble :yellow "interactive installation" :type]
-    [bubble :red "not sure" :type :unsure]]
+    [bubble :red "not sure" :type]]
    [controls "" "web/primary"]])
