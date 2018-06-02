@@ -9,9 +9,9 @@
    [:div.bubbles-wrap
     ; TODO: pass slug to controls component
     ; based on current selection
-    [bubble :green "website"]
-    [bubble :blue "mobile app"]
-    [bubble :purple "service or integration"]
-    [bubble :yellow "interactive installation"]
-    [bubble :red "not sure"]]
+    [bubble :green "website" :type]
+    [bubble :blue "mobile app" :type]
+    [bubble :purple "service or integration" :type]
+    [bubble :yellow "interactive installation" :type]
+    [bubble :red "not sure" :type :unsure]]
    [controls "" "web/primary"]])

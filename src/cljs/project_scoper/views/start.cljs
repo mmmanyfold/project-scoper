@@ -10,6 +10,6 @@
    [:h2 "I need to..."]
    [:div.bubbles-wrap
     ; TODO: store current selection
-    [bubble :green "start from scratch" :path :from-scratch]
-    [bubble :blue "build on an existing project" :path :build-on]]
+    [bubble :green "start from scratch" :path]
+    [bubble :blue "build on an existing project" :path]]
    [controls nil "type"]])

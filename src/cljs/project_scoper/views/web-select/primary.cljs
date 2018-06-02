@@ -8,9 +8,9 @@
    [:h2 "primary purpose:"]
    [:div.bubbles-wrap
     ; TODO: store current selection
-    [bubble :green "portfolio / gallery"]
-    [bubble :blue "sell online"]
-    [bubble :purple "blogging"]
-    [bubble :yellow "share business info"]
-    [bubble :red "other"]]
+    [bubble :green "portfolio / gallery" :purpose]
+    [bubble :blue "sell online" :purpose]
+    [bubble :purple "blogging" :purpose]
+    [bubble :yellow "share business info" :purpose]
+    [bubble :red "other" :purpose]]
    [controls "type"]])
