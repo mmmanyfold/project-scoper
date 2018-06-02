@@ -7,6 +7,21 @@
    (:active-view db)))
 
 (re-frame/reg-sub
+  ::current-path
+  (fn [db _]
+    (:current-path db)))
+
+(re-frame/reg-sub
   ::path
   (fn [db _]
     (:path db)))
+
+(re-frame/reg-sub
+  ::type
+  (fn [db _]
+    (:type db)))
+
+(re-frame/reg-sub
+  ::primary
+  (fn [db _]
+    (:primary db)))
