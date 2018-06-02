@@ -8,7 +8,7 @@
   [:div
    [:h2 "primary purpose:"]
    [:div.bubbles-wrap
-    [bubble :green "portfolio / gallery" :primary]
+    [bubble :green "gallery / portfolio" :primary]
     [bubble :blue "sell online" :primary]
     [bubble :purple "blogging" :primary]
     [bubble :yellow "share business info" :primary]

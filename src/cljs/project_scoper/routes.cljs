@@ -27,7 +27,7 @@
     (rf/dispatch [::events/set-active-view :select-type]))
   (defroute "/:path/:type/" []
     (rf/dispatch [::events/set-active-view :web-select-primary]))
-  (defroute "/web/secondary" []
+  (defroute "/:path/:type/:primary/" []
     (rf/dispatch [::events/set-active-view :web-select-secondary]))
 
 

@@ -25,3 +25,8 @@
   ::primary
   (fn [db _]
     (:primary db)))
+
+(re-frame/reg-sub
+  ::secondary
+  (fn [db _]
+    (:secondary db)))

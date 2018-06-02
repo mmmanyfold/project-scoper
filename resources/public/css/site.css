@@ -139,3 +139,13 @@ header p {
 .controls span:hover {
   color: #23527C;
 }
+form.web-select-secondary {
+  font-size: 1.6em;
+  text-align: left;
+  width: 165px;
+  margin: 0 auto;
+}
+form.web-select-secondary label {
+  margin-left: 0.5em;
+  font-weight: 400;
+}
