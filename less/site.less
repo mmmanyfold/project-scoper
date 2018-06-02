@@ -32,6 +32,7 @@ h2, h3 {
 }
 
 h2 {
+  font-size: 2.5em;
   padding: 2px 8px 2px 6px;
 }
 
@@ -49,6 +50,9 @@ header {
     background-size: 45%;
     background-position: bottom;
     padding-top: 10em;
+    @media screen and (max-width: 500px) {
+      background-size: 90%;
+    }
     .logo:hover {
       opacity: 0.9;
     }
@@ -97,10 +101,12 @@ header {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  margin-bottom: 0.5em;
 }
 
 .bubble {
   font-size: 1.5em;
+  font-weight: 500;
   text-align: center;
   border-radius: 50% 50%;
   border: 2px solid;
@@ -110,11 +116,13 @@ header {
   flex-flow: row wrap;
   align-items: center;
   margin: 1em;
-  padding: 1em;
+  margin-bottom: 0;
+  padding: 0.9em;
   .text { width: 100% }
 }
 
 .controls {
   display: flex;
   justify-content: space-around;
+  h3 { font-weight: 500 }
 }
