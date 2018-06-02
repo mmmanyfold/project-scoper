@@ -12,16 +12,15 @@
              :yellow "#F2C94C"})
 
 (defn bubble [color-key text db-key]
-  (let [color-val (color-key colors)]
-    (fn []
-      (let [db-value (keywordize-name text)
-            selected? (= @(rf/subscribe [(keyword (str "project-scoper.subs/" (name db-key)))]) db-value)]
-       [:div.bubble {:style {:border-color color-val
-                             :background-color (if selected?
-                                                 color-val
-                                                 "white")
-                             :color (if selected?
-                                      "white"
-                                      color-val)}
-                     :on-click #(rf/dispatch [::events/set-value db-key db-value])}
-         [:div.text text]]))))
+  (let [color-val (color-key colors)
+        db-value (keywordize-name text)
+        selected? (= @(rf/subscribe [(keyword (str "project-scoper.subs/" (name db-key)))]) db-value)]
+    [:div.bubble {:style {:border-color color-val
+                          :background-color (if selected?
+                                              color-val
+                                              "white")
+                          :color (if selected?
+                                   "white"
+                                   color-val)}
+                  :on-click #(rf/dispatch [::events/set-value db-key db-value])}
+      [:div.text text]]))
