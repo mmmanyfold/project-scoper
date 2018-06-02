@@ -110,6 +110,12 @@ header p {
   margin-bottom: 0;
   padding: 0.9em;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .bubble .text {
   width: 100%;
@@ -117,7 +123,19 @@ header p {
 .controls {
   display: flex;
   justify-content: space-around;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .controls h3 {
   font-weight: 500;
+}
+.controls span {
+  color: #337AB7;
+}
+.controls span:hover {
+  color: #23527C;
 }

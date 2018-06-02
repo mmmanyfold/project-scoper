@@ -21,10 +21,11 @@
   ;; --------------------
   ;; define routes here
   (defroute "/" []
+    (set! (.-hash (.-location js/window)) "#/")
     (rf/dispatch [::events/set-active-view :start-view]))
-  (defroute "/type" []
+  (defroute "/:path/" []
     (rf/dispatch [::events/set-active-view :select-type]))
-  (defroute "/web/primary" []
+  (defroute "/:path/:type/" []
     (rf/dispatch [::events/set-active-view :web-select-primary]))
   (defroute "/web/secondary" []
     (rf/dispatch [::events/set-active-view :web-select-secondary]))
