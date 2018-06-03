@@ -17,4 +17,5 @@
     (-> name ->kebab-case keyword)))
 
 (defn unkeywordize [keyword]
-  (string/replace (name keyword) "slash" "/"))
+  (let [replace-slash (string/replace (name keyword) "slash" "/")]
+    (string/replace replace-slash "-" " ")))
