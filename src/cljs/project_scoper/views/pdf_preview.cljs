@@ -5,7 +5,8 @@
             [project-scoper.components.bubble :refer [bubble]]))
 
 (defn main []
-  (let [doc (js/jsPDF.)
+  (let [pdf (js/jsPDF.)
+        _ (set! window.foo js/html2canvas)
         handle-download
         (fn []
           (js/html2canvas
@@ -13,7 +14,7 @@
             (clj->js {:onrendered
                       (fn [canvas]
                         (let [img (-> canvas (.toDataURL "image/png"))]
-                          (-> doc
+                          (-> pdf
                               (.addImage img 0 0)
                               (.save "test.pdf"))))})))]
     [:div.pdf-prev
