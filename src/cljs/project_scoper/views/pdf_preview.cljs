@@ -5,15 +5,14 @@
             [project-scoper.components.bubble :refer [bubble]]))
 
 (defn main []
-  (let [pdf (js/jsPDF.)
-        _ (set! window.foo js/html2canvas)
-        handle-download
+  (let [handle-download
         (fn []
           (js/html2canvas
             (js/document.querySelector "#pdf")
             (clj->js {:onrendered
                       (fn [canvas]
-                        (let [img (-> canvas (.toDataURL "image/png"))]
+                        (let [pdf (js/jsPDF.)
+                              img (-> canvas (.toDataURL "image/png"))]
                           (-> pdf
                               (.addImage img 0 10 0 0)
                               (.save "test.pdf"))))})))]
