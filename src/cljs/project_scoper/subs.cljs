@@ -40,3 +40,8 @@
   ::platform-name
   (fn [db _]
     (:platform-name db)))
+  
+(re-frame/reg-sub
+  ::platform
+  (fn [db _]
+   (:platform db)))
