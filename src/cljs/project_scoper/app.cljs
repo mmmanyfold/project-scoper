@@ -6,7 +6,8 @@
             [project-scoper.views.select-type :refer [select-type]]
             [project-scoper.views.web-select.primary :refer [web-select-primary]]
             [project-scoper.views.web-select.secondary :refer [web-select-secondary]]
-            [project-scoper.views.web-select.platform :refer [web-select-platform]]))
+            [project-scoper.views.web-select.platform :refer [web-select-platform]]
+            [project-scoper.views.mobile-select.platform :refer [mobile-select-platform]]))
 
 (defn- views [view-name]
        (case view-name
@@ -15,6 +16,7 @@
              :web-select-primary [web-select-primary]
              :web-select-secondary [web-select-secondary]
              :web-select-platform [web-select-platform]
+             :mobile-select-platform [mobile-select-platform]
              [:div [:h1 404] [:p [:a {:href "/"} "Return home"]]]))
 
 (defn app-view []

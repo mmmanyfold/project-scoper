@@ -31,7 +31,8 @@
     (rf/dispatch [::events/set-active-view :web-select-secondary]))
   (defroute "/:path/website/:primary/:secondary/" []
     (rf/dispatch [::events/set-active-view :web-select-platform]))
-
+  (defroute "/:path/mobile-app/" []
+    (rf/dispatch [::events/set-active-view :mobile-select-platform]))
 
   ;; --------------------
   (hook-browser-navigation!))
