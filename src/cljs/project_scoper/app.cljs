@@ -15,7 +15,7 @@
              :web-select-primary [web-select-primary]
              :web-select-secondary [web-select-secondary]
              :web-select-platform [web-select-platform]
-             [:div]))
+             [:div [:h1 404] [:p [:a {:href "/"} "Return home"]]]))
 
 (defn app-view []
   (let [active-view @(rf/subscribe [::subs/active-view])]
