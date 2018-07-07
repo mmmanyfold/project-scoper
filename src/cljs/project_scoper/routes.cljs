@@ -30,9 +30,15 @@
     (rf/dispatch [::events/set-active-view :web-b]))
   (defroute "/step/3/web/c" []
     (rf/dispatch [::events/set-active-view :web-c]))
+  (defroute "/step/3/web/d" []
+    (rf/dispatch [::events/set-active-view :integrations]))
+  (defroute "/step/3/web/e" []
+    (rf/dispatch [::events/set-active-view :users]))
   (defroute "/step/3/mobile/a" []
     (rf/dispatch [::events/set-active-view :mobile-a]))
-  (defroute "/test" []
+  (defroute "/step/3/mobile/b" []
+    (rf/dispatch [::events/set-active-view :integrations]))
+  (defroute "/step/3/mobile/c" []
     (rf/dispatch [::events/set-active-view :users]))
 
   ;; --------------------
