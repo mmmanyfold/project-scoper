@@ -7,8 +7,9 @@
             [project-scoper.views.step-3.web-a :refer [web-a-view]]
             [project-scoper.views.step-3.web-b :refer [web-b-view]]
             [project-scoper.views.step-3.web-c :refer [web-c-view]]
+            [project-scoper.views.step-3.mobile-a :refer [mobile-a-view]]
             [project-scoper.views.step-3.shared-users :refer [users-view]]
-            [project-scoper.views.mobile-select.mobile-a :refer [mobile-a-view]]))
+            [project-scoper.views.step-3.shared-integrations :refer [integrations-view]]))
 
 (defn- views [view-name]
        (case view-name
@@ -19,6 +20,7 @@
              :web-c [web-c-view]
              :mobile-a [mobile-a-view]
              :users [users-view]
+             :integrations [integrations-view]
              [:div [:h1 404] [:p [:a {:href "/"} "Return home"]]]))
 
 (defn app-view []

@@ -1,4 +1,4 @@
-(ns project-scoper.views.mobile-select.mobile-a
+(ns project-scoper.views.step-3.mobile-a
   (:require [re-frame.core :as rf]
             [project-scoper.components.bubble :refer [bubble]]
             [project-scoper.components.controls :refer [controls]]
