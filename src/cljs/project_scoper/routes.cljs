@@ -21,18 +21,17 @@
   ;; --------------------
   ;; define routes here
   (defroute "/" []
-    (set! (.-hash (.-location js/window)) "#/")
-    (rf/dispatch [::events/set-active-view :start-view]))
+    (rf/dispatch [::events/set-active-view :step-1]))
   (defroute "/:path/" []
-    (rf/dispatch [::events/set-active-view :select-type]))
+    (rf/dispatch [::events/set-active-view :step-2]))
   (defroute "/:path/website/" []
-    (rf/dispatch [::events/set-active-view :web-select-primary]))
+    (rf/dispatch [::events/set-active-view :web-a]))
   (defroute "/:path/website/:primary/" []
-    (rf/dispatch [::events/set-active-view :web-select-secondary]))
+    (rf/dispatch [::events/set-active-view :web-b]))
   (defroute "/:path/website/:primary/:secondary/" []
-    (rf/dispatch [::events/set-active-view :web-select-platform]))
+    (rf/dispatch [::events/set-active-view :web-c]))
   (defroute "/:path/mobile-app/" []
-    (rf/dispatch [::events/set-active-view :mobile-select-platform]))
+    (rf/dispatch [::events/set-active-view :mobile-a]))
 
   ;; --------------------
   (hook-browser-navigation!))

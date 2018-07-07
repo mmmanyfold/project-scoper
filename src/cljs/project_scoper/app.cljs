@@ -2,21 +2,21 @@
   (:require [re-frame.core :as rf]
             [re-com.core :as re-com]
             [project-scoper.subs :as subs]
-            [project-scoper.views.start :refer [start-view]]
-            [project-scoper.views.select-type :refer [select-type]]
-            [project-scoper.views.web-select.primary :refer [web-select-primary]]
-            [project-scoper.views.web-select.secondary :refer [web-select-secondary]]
-            [project-scoper.views.web-select.platform :refer [web-select-platform]]
-            [project-scoper.views.mobile-select.platform :refer [mobile-select-platform]]))
+            [project-scoper.views.step-1 :refer [step-1-view]]
+            [project-scoper.views.step-2 :refer [step-2-view]]
+            [project-scoper.views.web-select.web-a :refer [web-a-view]]
+            [project-scoper.views.web-select.web-b :refer [web-b-view]]
+            [project-scoper.views.web-select.web-c :refer [web-c-view]]
+            [project-scoper.views.mobile-select.mobile-a :refer [mobile-a-view]]))
 
 (defn- views [view-name]
        (case view-name
-             :start-view [start-view]
-             :select-type [select-type]
-             :web-select-primary [web-select-primary]
-             :web-select-secondary [web-select-secondary]
-             :web-select-platform [web-select-platform]
-             :mobile-select-platform [mobile-select-platform]
+             :step-1 [step-1-view]
+             :step-2 [step-2-view]
+             :web-a [web-a-view]
+             :web-b [web-b-view]
+             :web-c [web-c-view]
+             :mobile-a [mobile-a-view]
              [:div [:h1 404] [:p [:a {:href "/"} "Return home"]]]))
 
 (defn app-view []

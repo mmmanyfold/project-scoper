@@ -1,10 +1,10 @@
-(ns project-scoper.views.web-select.primary
+(ns project-scoper.views.web-select.web-a
   (:require [re-frame.core :as rf]
             [project-scoper.components.bubble :refer [bubble]]
             [project-scoper.components.controls :refer [controls]]
             [project-scoper.subs :as subs]))
 
-(defn web-select-primary []
+(defn web-a-view []
   [:div
    [:h2 "primary purpose:"]
    [:div.bubbles-wrap

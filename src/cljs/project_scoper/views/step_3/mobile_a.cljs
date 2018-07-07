@@ -1,10 +1,10 @@
-(ns project-scoper.views.mobile-select.platform
+(ns project-scoper.views.mobile-select.mobile-a
   (:require [re-frame.core :as rf]
             [project-scoper.components.bubble :refer [bubble]]
             [project-scoper.components.controls :refer [controls]]
             [project-scoper.subs :as subs]))
 
-(defn mobile-select-platform []
+(defn mobile-a-view []
   [:div
     [:h2 "Platform:"]
     [:div.bubbles-wrap
