@@ -25,7 +25,6 @@
                                   :custom-platform
                                   :online-presence}
                        :secondary []
-                       :platform? false
                        :platform-name nil
                        :integrations []
                        :user-accounts? false
@@ -39,6 +38,7 @@
                           :user-accounts? false
                           :design-provided? false
                           :design-provided []}
+             ;; text box for the following
              :service-integration nil
              :installation nil
              :not-sure nil}
