@@ -25,3 +25,45 @@
   ::primary
   (fn [db _]
     (:primary db)))
+
+(re-frame/reg-sub
+  ::secondary
+  (fn [db _]
+    (:secondary db)))
+
+(re-frame/reg-sub
+  ::platform?
+  (fn [db _]
+    (:platform? db)))
+
+(re-frame/reg-sub
+  ::platform-name
+  (fn [db _]
+    (:platform-name db)))
+  
+(re-frame/reg-sub
+  ::platform
+  (fn [db _]
+   (:platform db)))
+
+(re-frame/reg-sub
+  ::user-accounts?
+  (fn [db _]
+    (get-in db [:step-3 :website :user-accounts?])))
+
+(re-frame/reg-sub
+  ::design-provided?
+  (fn [db _]
+    (get-in db [:step-3 :website :design-provided?])))
+
+(re-frame/reg-sub
+  ::design-provided
+  (fn [db _]
+    (get-in db [:step-3 :website :design-provided])))
+
+;TODO add logic to change :website to either mobile-app or website based on path
+
+(re-frame/reg-sub
+  ::deadline-type
+  (fn [db _]
+    (get-in db [:step-4 :deadline-type])))

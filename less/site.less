@@ -4,6 +4,7 @@
 @blackish: #0A0608;
 @lightgray: #C5C5C5;
 @darkgray: #606060;
+@redish: #EB5757;
 
 body {
   color: @blackish;
@@ -16,9 +17,11 @@ body {
   background-color: white;
   text-align: center;
   padding: 1.5em;
-  margin: 3em;
-  @media screen and (max-width: 1133px) {
-    margin-top: 4em;
+  padding-bottom: 3em;
+  margin: 3em 4em 4em 4em;
+  @media screen and (max-width: 900px) {
+    margin: 3em 0 0 0;
+    padding-top: 1em;
   }
 }
 
@@ -28,12 +31,31 @@ h1 {
 }
 
 h2, h3 {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 h2 {
   font-size: 2.5em;
   padding: 2px 8px 2px 6px;
+}
+
+h5 {
+  font-size: 0.6em;
+  margin: 1.5em 0;
+}
+
+input {
+  font-weight: 300;
+}
+
+textarea {
+  border: 1px solid black;
+  width: 60%;
+  outline: 0;
+  margin-top: 1em;
+  @media screen and (max-width: 900px) {
+    width: 95%;
+  }
 }
 
 a:hover {
@@ -44,17 +66,21 @@ header {
   text-align: center;
   .img-wrapper {
     width: 100%;
-    height: 15em;
+    height: 10em;
     background-image: url('../img/dragon-fold-header-animated.svg');
     background-repeat: repeat-x;
     background-size: 45%;
     background-position: bottom;
-    padding-top: 10em;
+    padding-top: 5em;
+    .logo:hover {
+      opacity: 0.9;
+    }
     @media screen and (max-width: 500px) {
       background-size: 90%;
     }
-    .logo:hover {
-      opacity: 0.9;
+    @media screen and (max-width: 900px) {
+      padding-top: 5em;
+      height: 10em;
     }
   }
   h1 {
@@ -142,6 +168,60 @@ header {
     color: #337AB7;
     &:hover {
       color: #23527C;
+      cursor: pointer;
     }
   }
+}
+
+form.web-select-secondary{
+  font-size: 2em;
+  text-align: left;
+  width: 300px;
+  margin: 0 auto;
+  label {
+    margin-left: 0.5em;
+    font-weight: 300;
+    display: inline;
+    vertical-align: middle;
+  }
+  input {
+    display: inline;
+    vertical-align: middle;
+  }
+}
+
+.iframe-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 129.41%;
+
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#pdf {
+  width: 790px;
+  padding: 20px 40px;
+  margin: 0 auto;
+  text-align: left;
+  .title, .contact {
+    color: @redish;
+  }
+  img.logo {
+    width: 75px;
+    opacity: 0.5;
+  }
+
+}
+
+// color classes
+
+.redish {
+  color: @redish;
 }

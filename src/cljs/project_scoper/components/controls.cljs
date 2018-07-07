@@ -3,12 +3,6 @@
             [project-scoper.events :as events]
             [project-scoper.subs :as subs]))
 
-(def colors {:red "#EB5757"
-             :green "#6FCF97"
-             :blue "#56CCF2"
-             :purple "#BB6BD9"
-             :yellow "#F2C94C"})
-
 (defn controls [back? selection]
   [:div.controls
    (when back?

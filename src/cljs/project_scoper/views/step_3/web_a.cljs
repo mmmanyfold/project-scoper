@@ -1,14 +1,14 @@
-(ns project-scoper.views.web-select.primary
+(ns project-scoper.views.step-3.web-a
   (:require [re-frame.core :as rf]
             [project-scoper.components.bubble :refer [bubble]]
             [project-scoper.components.controls :refer [controls]]
             [project-scoper.subs :as subs]))
 
-(defn web-select-primary []
+(defn web-a-view []
   [:div
    [:h2 "primary purpose:"]
    [:div.bubbles-wrap
-    [bubble :green "portfolio / gallery" :primary]
+    [bubble :green "gallery / portfolio" :primary]
     [bubble :blue "sell online" :primary]
     [bubble :purple "blogging" :primary]
     [bubble :yellow "share business info" :primary]
