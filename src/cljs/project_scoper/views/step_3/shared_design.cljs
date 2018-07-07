@@ -6,26 +6,26 @@
             [project-scoper.events :as events]
             [project-scoper.subs :as subs]))
 
-(def design-options ["Logo" "Colors" "Fonts" "Icons" "Images" "Site map" "Mockups"])
-
 (defn design-view []
-  (fn []
-    [:div
-     [:h2 "Will you provide the design/visual identity?"]
-     [:div.bubbles-wrap
-      [bubble :green "Yes" :design-provided?]
-      [bubble :blue "No" :design-provided?]]
-     (let [design-provided? @(rf/subscribe [::subs/design-provided?])
-           design-provided @(rf/subscribe [::subs/design-provided])]
-       (if design-provided?
-         [:form.design-options
-          [:h3 "What will you provide?"]
-          [:h4 "Check all that apply"]
-          (doall (for [opt design-options]
-                   ^{:key (gensym "opt-")}
-                   [:div
-                    [:input {:type "checkbox"}]
-                    [:label opt]]))
-          (when-not (nil? design-provided)
-            [controls true true])]
-         [controls true true]))]))
+  [:div
+   [:h2 "Will you provide the design/visual identity?"]
+   [:div.bubbles-wrap
+    [bubble :green "Yes" :design-provided?]
+    [bubble :blue "No" :design-provided?]]
+   (let [design-provided? @(rf/subscribe [::subs/design-provided?])
+         design-provided @(rf/subscribe [::subs/design-provided])
+         design-options ["Logo" "Colors" "Fonts" "Icons" "Images" "Site map" "Mockups"]]
+     (if design-provided?
+       [:form.web-select-secondary
+        [:h3 "What will you provide?"]
+        [:h5 [:i "> check all that apply"]]
+        (doall (for [opt design-options
+                     :let [checked? (reagent/atom false)]]
+                 ^{:key (gensym "opt-")}
+                 [:div
+                  [:input {:type "checkbox"
+                           :on-click #(swap! checked? not)}]
+                  [:label opt]]))
+        (when-not (nil? design-provided)
+          [controls true true])]
+       [controls true true]))])
