@@ -144,13 +144,22 @@ header p {
   color: #23527C;
   cursor: pointer;
 }
-form.web-select-secondary {
+form.web-select-secondary,
+form.design-options {
   font-size: 2em;
   text-align: left;
   width: 300px;
   margin: 0 auto;
 }
-form.web-select-secondary label {
+form.web-select-secondary label,
+form.design-options label {
   margin-left: 0.5em;
   font-weight: 300;
+  display: inline;
+  vertical-align: middle;
+}
+form.web-select-secondary input,
+form.design-options input {
+  display: inline;
+  vertical-align: middle;
 }

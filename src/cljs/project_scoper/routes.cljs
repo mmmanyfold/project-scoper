@@ -32,8 +32,6 @@
     (rf/dispatch [::events/set-active-view :web-c]))
   (defroute "/:path/mobile-app/" []
     (rf/dispatch [::events/set-active-view :mobile-a]))
-  (defroute "/test" []
-    (rf/dispatch [::events/set-active-view :users]))
 
   ;; --------------------
   (hook-browser-navigation!))

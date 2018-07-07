@@ -47,6 +47,18 @@
    (:platform db)))
 
 (re-frame/reg-sub
-  ::users
+  ::user-accounts?
   (fn [db _]
-    (:users db)))
+    (get-in db [:step-3 :website :user-accounts?])))
+
+(re-frame/reg-sub
+  ::design-provided?
+  (fn [db _]
+    (get-in db [:step-3 :website :design-provided?])))
+
+(re-frame/reg-sub
+  ::design-provided
+  (fn [db _]
+    (get-in db [:step-3 :website :design-provided])))
+
+;TODO add logic to change :website to either mobile-app or website based on path

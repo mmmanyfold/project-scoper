@@ -8,6 +8,7 @@
             [project-scoper.views.step-3.web-b :refer [web-b-view]]
             [project-scoper.views.step-3.web-c :refer [web-c-view]]
             [project-scoper.views.step-3.shared-users :refer [users-view]]
+            [project-scoper.views.step-3.shared-design :refer [design-view]]
             [project-scoper.views.mobile-select.mobile-a :refer [mobile-a-view]]))
 
 (defn- views [view-name]
@@ -19,6 +20,7 @@
              :web-c [web-c-view]
              :mobile-a [mobile-a-view]
              :users [users-view]
+             :design [design-view]
              [:div [:h1 404] [:p [:a {:href "/"} "Return home"]]]))
 
 (defn app-view []
