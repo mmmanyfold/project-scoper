@@ -197,6 +197,18 @@ form.web-select-secondary input {
 }
 #pdf {
   width: 790px;
+  padding: 0 20px;
   margin: 0 auto;
-  padding: 20px;
+  text-align: left;
+}
+#pdf .title,
+#pdf .contact {
+  color: #eb5757;
+}
+#pdf img.logo {
+  width: 75px;
+  opacity: 0.5;
+}
+.redish {
+  color: #eb5757;
 }

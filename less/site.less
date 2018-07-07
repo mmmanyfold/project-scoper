@@ -4,6 +4,7 @@
 @blackish: #0A0608;
 @lightgray: #C5C5C5;
 @darkgray: #606060;
+@redish: #EB5757;
 
 body {
   color: @blackish;
@@ -189,8 +190,6 @@ form.web-select-secondary{
   }
 }
 
-
-
 .iframe-container {
   position: relative;
   height: 0;
@@ -206,9 +205,23 @@ form.web-select-secondary{
   }
 }
 
-
 #pdf {
   width: 790px;
+  padding: 0 20px;
   margin: 0 auto;
-  padding: 20px;
+  text-align: left;
+  .title, .contact {
+    color: @redish;
+  }
+  img.logo {
+    width: 75px;
+    opacity: 0.5;
+  }
+
+}
+
+// color classes
+
+.redish {
+  color: @redish;
 }
