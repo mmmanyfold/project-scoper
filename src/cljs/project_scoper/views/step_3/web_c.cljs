@@ -1,4 +1,4 @@
-(ns project-scoper.views.web-select.web-c
+(ns project-scoper.views.step-3.web-c
   (:require [re-frame.core :as rf]
             [project-scoper.components.bubble :refer [bubble]]
             [project-scoper.components.short-text :refer [short-text]]

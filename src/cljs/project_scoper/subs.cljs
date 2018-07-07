@@ -45,3 +45,8 @@
   ::platform
   (fn [db _]
    (:platform db)))
+
+(re-frame/reg-sub
+  ::users
+  (fn [db _]
+    (:users db)))
