@@ -4,9 +4,10 @@
             [project-scoper.subs :as subs]
             [project-scoper.views.step-1 :refer [step-1-view]]
             [project-scoper.views.step-2 :refer [step-2-view]]
-            [project-scoper.views.web-select.web-a :refer [web-a-view]]
-            [project-scoper.views.web-select.web-b :refer [web-b-view]]
-            [project-scoper.views.web-select.web-c :refer [web-c-view]]
+            [project-scoper.views.step-3.web-a :refer [web-a-view]]
+            [project-scoper.views.step-3.web-b :refer [web-b-view]]
+            [project-scoper.views.step-3.web-c :refer [web-c-view]]
+            [project-scoper.views.step-3.shared-users :refer [users-view]]
             [project-scoper.views.mobile-select.mobile-a :refer [mobile-a-view]]))
 
 (defn- views [view-name]
@@ -17,6 +18,7 @@
              :web-b [web-b-view]
              :web-c [web-c-view]
              :mobile-a [mobile-a-view]
+             :users [users-view]
              [:div [:h1 404] [:p [:a {:href "/"} "Return home"]]]))
 
 (defn app-view []

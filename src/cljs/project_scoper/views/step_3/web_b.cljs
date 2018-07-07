@@ -1,4 +1,4 @@
-(ns project-scoper.views.web-select.web-b
+(ns project-scoper.views.step-3.web-b
   (:require [reagent.core :as reagent]
             [re-frame.core :as rf]
             [project-scoper.subs :as subs]
