@@ -62,3 +62,8 @@
     (get-in db [:step-3 :website :design-provided])))
 
 ;TODO add logic to change :website to either mobile-app or website based on path
+
+(re-frame/reg-sub
+  ::deadline-type
+  (fn [db _]
+    (get-in db [:step-4 :deadline-type])))
