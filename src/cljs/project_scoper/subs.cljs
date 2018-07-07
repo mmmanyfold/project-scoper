@@ -54,7 +54,7 @@
 (re-frame/reg-sub
   ::design-provided?
   (fn [db _]
-    (get-in db [:design-provided?])))
+    (get-in db [:step-3 :website :design-provided?])))
 
 (re-frame/reg-sub
   ::design-provided
