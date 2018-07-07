@@ -54,6 +54,8 @@
             (rf/dispatch [::events/set-active-view :step-4]))
   (defroute "/step/5" []
             (rf/dispatch [::events/set-active-view :step-5]))
+  (defroute "/pdf" []
+            (rf/dispatch [::events/set-active-view :pdf-preview]))
 
   ;; --------------------
   (hook-browser-navigation!))
