@@ -21,25 +21,31 @@
   ;; --------------------
   ;; define routes here
   (defroute "/" []
-    (rf/dispatch [::events/set-active-view :step-1]))
+            (rf/dispatch [::events/set-active-view :step-1]))
   (defroute "/step/2" []
-    (rf/dispatch [::events/set-active-view :step-2]))
+            (rf/dispatch [::events/set-active-view :step-2]))
   (defroute "/step/3/web/a" []
-    (rf/dispatch [::events/set-active-view :web-a]))
+            (rf/dispatch [::events/set-active-view :web-a]))
   (defroute "/step/3/web/b" []
-    (rf/dispatch [::events/set-active-view :web-b]))
+            (rf/dispatch [::events/set-active-view :web-b]))
   (defroute "/step/3/web/c" []
-    (rf/dispatch [::events/set-active-view :web-c]))
+            (rf/dispatch [::events/set-active-view :web-c]))
   (defroute "/step/3/web/d" []
-    (rf/dispatch [::events/set-active-view :integrations]))
+            (rf/dispatch [::events/set-active-view :integrations]))
   (defroute "/step/3/web/e" []
-    (rf/dispatch [::events/set-active-view :users]))
+            (rf/dispatch [::events/set-active-view :users]))
   (defroute "/step/3/mobile/a" []
-    (rf/dispatch [::events/set-active-view :mobile-a]))
+            (rf/dispatch [::events/set-active-view :mobile-a]))
   (defroute "/step/3/mobile/b" []
-    (rf/dispatch [::events/set-active-view :integrations]))
+            (rf/dispatch [::events/set-active-view :integrations]))
   (defroute "/step/3/mobile/c" []
-    (rf/dispatch [::events/set-active-view :users]))
+            (rf/dispatch [::events/set-active-view :users]))
+  (defroute "/step/3/service" []
+            (rf/dispatch [::events/set-active-view :description]))
+  (defroute "/step/3/installation" []
+            (rf/dispatch [::events/set-active-view :description]))
+  (defroute "/step/3/not-sure" []
+            (rf/dispatch [::events/set-active-view :description]))
 
   ;; --------------------
   (hook-browser-navigation!))
