@@ -22,15 +22,15 @@
   ;; define routes here
   (defroute "/" []
     (rf/dispatch [::events/set-active-view :step-1]))
-  (defroute "/:path/" []
+  (defroute "/step/2" []
     (rf/dispatch [::events/set-active-view :step-2]))
-  (defroute "/:path/website/" []
+  (defroute "/step/3/web/a" []
     (rf/dispatch [::events/set-active-view :web-a]))
-  (defroute "/:path/website/:primary/" []
+  (defroute "/step/3/web/b" []
     (rf/dispatch [::events/set-active-view :web-b]))
-  (defroute "/:path/website/:primary/:secondary/" []
+  (defroute "/step/3/web/c" []
     (rf/dispatch [::events/set-active-view :web-c]))
-  (defroute "/:path/mobile-app/" []
+  (defroute "/step/3/mobile/a" []
     (rf/dispatch [::events/set-active-view :mobile-a]))
 
   ;; --------------------
