@@ -176,4 +176,10 @@ form.web-select-secondary {
 form.web-select-secondary label {
   margin-left: 0.5em;
   font-weight: 300;
+  display: inline;
+  vertical-align: middle;
+}
+form.web-select-secondary input {
+  display: inline;
+  vertical-align: middle;
 }

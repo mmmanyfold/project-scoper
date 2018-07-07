@@ -10,6 +10,7 @@
             [project-scoper.views.step-3.mobile-a :refer [mobile-a-view]]
             [project-scoper.views.step-3.shared-users :refer [users-view]]
             [project-scoper.views.step-3.shared-integrations :refer [integrations-view]]
+            [project-scoper.views.step-3.shared-design :refer [design-view]]
             [project-scoper.views.step-3.shared-description :refer [description-view]]))
 
 (defn- views [view-name]
@@ -22,6 +23,7 @@
              :mobile-a [mobile-a-view]
              :users [users-view]
              :integrations [integrations-view]
+             :design [design-view]
              :description [description-view]
              [:div [:h1 404] [:p [:a {:href "/"} "Return home"]]]))
 
