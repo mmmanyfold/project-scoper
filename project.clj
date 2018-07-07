@@ -8,7 +8,9 @@
                  [org.clojure/core.async "0.2.391"]
                  [re-com "2.1.0"]
                  [secretary "1.2.3"]
-                 [camel-snake-kebab "0.4.0"]]
+                 [camel-snake-kebab "0.4.0"]
+                 [cljsjs/html2canvas "0.4.1-0"]
+                 [cljsjs/jspdf "1.3.2-1"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-less "1.7.5"]]

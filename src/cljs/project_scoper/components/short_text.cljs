@@ -7,10 +7,11 @@
             [clojure.string :refer [blank?]]))
 
 (defn short-text [placeholder db-key]
-  [:input.short-text {:type "text"
-                      :placeholder placeholder
-                      :on-change (fn [e]
-                                   (let [value (.-value (.-target e))]
-                                     (if-not (blank? value)
-                                       (rf/dispatch [::events/set-value db-key value])
-                                       (rf/dispatch [::events/set-value db-key nil]))))}])
+  [:input.short-text
+   {:type        "text"
+    :placeholder placeholder
+    :on-change   (fn [e]
+                   (let [value (.-value (.-target e))]
+                     (if-not (blank? value)
+                       (rf/dispatch [::events/set-value db-key value])
+                       (rf/dispatch [::events/set-value db-key nil]))))}])
