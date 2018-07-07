@@ -50,6 +50,8 @@
             (rf/dispatch [::events/set-active-view :description]))
   (defroute "/step/3/not-sure" []
             (rf/dispatch [::events/set-active-view :description]))
+  (defroute "/step/5" []
+            (rf/dispatch [::events/set-active-view :step-5]))
 
   ;; --------------------
   (hook-browser-navigation!))

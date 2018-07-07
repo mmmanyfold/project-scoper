@@ -3,8 +3,7 @@
             [re-frame.core :as rf]
             [project-scoper.subs :as subs]
             [project-scoper.components.short-text :refer [short-text]]
-            [project-scoper.components.controls :refer [controls]]
-            [project-scoper.helpers :refer [unkeywordize]]))
+            [project-scoper.components.controls :refer [controls]]))
 
 (defn integrations-view [type]
   (let [options ["youtube/vimeo", "google app(s)", "social media"]
