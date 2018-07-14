@@ -42,7 +42,7 @@
         [:span [:a {:href "http://mmmanyfold.com" :target "_blank"} "brought to you by mmmanyfold"]]]]
      [:header
       [:div.img-wrapper
-       [:a.logo {:href "/"}
+       [:a.logo {:href "/#/"}
         [:img {:src "img/logo-graydient-invert.png"}]]]
       [:h1 "project scoper"]
       [:p.subtitle "define your digital needs"]]
