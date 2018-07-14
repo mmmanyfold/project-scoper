@@ -7,11 +7,6 @@
    (:active-view db)))
 
 (re-frame/reg-sub
-  ::current-path
-  (fn [db _]
-    (:current-path db)))
-
-(re-frame/reg-sub
   ::path
   (fn [db _]
     (get-in db [:project-scope :step-1])))
@@ -29,7 +24,7 @@
 (re-frame/reg-sub
   ::secondary
   (fn [db _]
-    (:secondary db)))
+    (get-in db [:project-scope :step-3 :website :secondary])))
 
 (re-frame/reg-sub
   ::platform?
@@ -44,12 +39,12 @@
 (re-frame/reg-sub
   ::contact-name
   (fn [db _]
-    (:contact-name db)))
+    (get-in db [:project-scope :step-6 :name])))
 
 (re-frame/reg-sub
   ::contact-email
   (fn [db _]
-    (:contact-email db)))
+    (get-in db [:project-scope :step-6 :email])))
 
 (re-frame/reg-sub
   ::platform
@@ -73,8 +68,6 @@
   (fn [db _]
     (let [type (get-in db [:project-scope :step-2])]
       (get-in db [:project-scope :step-3 type :design-provided]))))
-
-;TODO add logic to change :website to either mobile-app or website based on path
 
 (re-frame/reg-sub
   ::deadline-type
