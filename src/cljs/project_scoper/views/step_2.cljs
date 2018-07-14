@@ -16,7 +16,12 @@
         [bubble :purple "service or integration" :type]
         [bubble :yellow "interactive installation" :type]
         [bubble :red "not sure" :type]]
-       (let [type @(rf/subscribe [::subs/type])]
-         (if-not (nil? type)
-           [controls "" (name type)]
-           [controls true nil]))])
+       (let [type @(rf/subscribe [::subs/type])
+             _ (js/console.log type)]
+         (case type
+           :website [controls true (name type) "/#/step/3/website/a"]
+           :mobile-app [controls true (name type) "/#/step/3/mobile-app/a"]
+           :service-or-integration [controls true (name type) "/#/step/3/service"]
+           :interactive-installation [controls true (name type) "/#/step/3/installation"]
+           :not-sure [controls true (name type) "/#/step/3/not-sure"]
+           nil [controls true false]))])
