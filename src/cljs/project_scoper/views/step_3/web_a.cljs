@@ -13,7 +13,6 @@
     [bubble :purple "blogging" :primary [:project-scope :step-3 :website :primary] :blogging]
     [bubble :yellow "business website" :primary [:project-scope :step-3 :website :primary] :business-website]
     [bubble :red "other" :primary [:project-scope :step-3 :website :primary] :other]]
-   (let [primary @(rf/subscribe [::subs/primary])]
-     (if-not (nil? primary)
-       [controls true (name primary)]
-       [controls true nil]))])
+   (if @(rf/subscribe [::subs/primary])
+     [controls true true "/#/step/3/website/b"]
+     [controls true false])])

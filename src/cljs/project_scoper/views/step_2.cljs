@@ -16,8 +16,7 @@
         [bubble :purple "service or integration" :type [:project-scope :step-2] :service-integration]
         [bubble :yellow "interactive installation" :type [:project-scope :step-2] :installation]
         [bubble :red "not sure" :type [:project-scope :step-2] :not-sure]]
-       (let [type @(rf/subscribe [::subs/type])
-             _ (js/console.log type)]
+       (let [type @(rf/subscribe [::subs/type])]
          (case type
            :website [controls true (name type) "/#/step/3/website/a"]
            :mobile-app [controls true (name type) "/#/step/3/mobile-app/a"]
