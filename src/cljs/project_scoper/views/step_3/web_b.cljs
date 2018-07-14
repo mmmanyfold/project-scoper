@@ -19,16 +19,16 @@
         (for [opt options]
           ^{:key (gensym "opt-")}
           [:div
-           [:input {:type      "checkbox"
-                    :checked   (contains? current-options opt)
-                    :on-change (fn [e]
+           [:input {:type    "checkbox"
+                    :checked (contains? current-options opt)
+                    :on-change
+                             (fn [e]
+                               (let [path [:project-scope :step-3 :website :secondary]]
                                  (if (-> e .-target .-checked)
                                    (rf/dispatch
-                                     [::events/set-value
-                                      [:project-scope :step-3 :website :secondary] (conj current-options opt)])
+                                     [::events/set-value path (conj current-options opt)])
                                    (rf/dispatch
-                                     [::events/set-value
-                                      [:project-scope :step-3 :website :secondary] (disj current-options opt)])))}]
+                                     [::events/set-value path (disj current-options opt)]))))}]
            [:label
             (cond
               (= :gallery-portfolio opt) "gallery / portfolio"
