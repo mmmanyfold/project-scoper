@@ -3,7 +3,7 @@
 (defn controls [back? selection next]
   [:div.controls
    (when back?
-     [:a {:href "/#/"}
+     [:a {:on-click #(.back (.-history js/window))}
       [:h3 [:i {:class "zmdi zmdi-caret-left"}] " back"]])
    (when selection
      [:a {:href next}
