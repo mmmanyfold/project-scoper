@@ -25,36 +25,37 @@
        [:a {:href "/#/"} [:button.pv3.ph4.ma2 "start over"]]
        [:hr]
        [:div#pdf
-        [:h1.f1.fw5 "Project Scope - "
-         [:span.title.fw5 "Website"] [:span "*"]]
-        [:div.measure.f5-ns "Client Contact"]
-        [:div.measure.f5-ns.contact "Sandeep Salter"]
-        [:div.measure.f5-ns.contact "sandeep@pictureroom.shop"]
-        [:hr]
-        [:h2.f2.pv1.fw5.redish "*Build on an existing project"]
-        [:ol.f3
-         [:li.mv3 [:div "PURPOSE"
-                   [:ul
-                    [:li [:span "Primary: "] [:span.redish "Online Shop"]]
-                    [:li [:span "Secondary: "] [:span.redish "Business Shop"]]]]]
-         [:li.mv3 [:div "PLATFORM"]
-          [:div.redish "Lightspeed"]]
-         [:li.mv3 [:div "INTEGRATIONS"]
-          [:div.redish "Facebook Events"]]
-         [:li.mv3 [:div "USER ACCOUNTS?"]
-          [:div.redish "No"]]
-         [:li.mv3 [:div "VISUAL IDENTITY"]
-          [:div.redish "Client will provide: Logo, Colors, Fonts, Icons, Images, Site Map, Site Mockups"]]
-         [:li.mv3 [:div "TIMELINE"]
-          [:div "Proposed Start: " [:span.redish "July 1, 2018"]]
-          [:div "Soft Deadline: " [:span.redish "September 5, 2018"]]]
-         [:li.mv3 [:div "COMMENTS"]
-          [:div.redish "We would like the ability to change out Featured Artist content & Staff Picks on a regular basis"]]
-         [:hr.ma2]
-         [:div
-          [:div.tr.flex.items-center.w-100.justify-end
-           [:span
-            [:small "generated with"]
-            [:br]
-            [:small "project-scoper.mmmanyfold.com"]]
-           [:div [:img.logo {:src "img/logo-purple.png"}]]]]]]])))
+        [:h1.f1.fw4 "Project Scope - "
+         [:span.specs.fw5 "Website"]]
+        [:div.f4 "Client Contact"]
+        [:div.f4.specs "Sandeep Salter"]
+        [:div.f4.specs "sandeep@pictureroom.shop"]
+        [:hr.mt3]
+        [:ol.f3.pt1.pb1.list-items
+         [:li.mv3 [:div "Context: "
+                   [:span.specs "Building on an existing project"]]]
+         [:li.mv3 [:div "Website Purpose"]
+                  [:ul
+                   [:li [:span "Primary:"] [:span.specs "Online Shop"]]
+                   [:li [:span "Secondary:"] [:span.specs "Business Shop"]]]]
+         [:li.mv3 [:div "Platform: "
+                   [:span.specs "Lightspeed"]]]
+         [:li.mv3 [:div "Integrations"]
+                  [:ul
+                   [:li [:span.specs "Facebook Events, Google Maps"]]]]
+         [:li.mv3 [:div "Need user accounts? "
+                   [:span.specs "No"]]]
+         [:li.mv3 [:div "Visual Identity"]
+                  [:ul
+                   [:li [:span.specs "Client will provide Logo, Colors, Fonts, Icons, Images, Site Map, Site Mockups"]]]]
+         [:li.mv3 [:div "Timeline"]
+                  [:ul
+                   [:li [:span "Proposed Start:" [:span.specs "July 1, 2018"]]]
+                   [:li [:span "Deadline:" [:span.specs "September 5, 2018 (soft)"]]]]]
+         [:li.mv3 [:div "Comments"]
+                  [:p.specs "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat."]]]
+        [:hr.mt4.mb3]
+        [:div.footer.tr.pt2.flex.items-center.w-100.justify-end
+         [:p "generated with"
+             [:br] "project-scoper.mmmanyfold.com"]
+         [:div [:img.logo {:src "img/logo-purple.png"}]]]]])))
