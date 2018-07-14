@@ -21,7 +21,7 @@
          (case type
            :website [controls true (name type) "/#/step/3/website/a"]
            :mobile-app [controls true (name type) "/#/step/3/mobile-app/a"]
-           :service-or-integration [controls true (name type) "/#/step/3/service"]
-           :interactive-installation [controls true (name type) "/#/step/3/installation"]
+           :service-integration [controls true (name type) "/#/step/3/service"]
+           :installation [controls true (name type) "/#/step/3/installation"]
            :not-sure [controls true (name type) "/#/step/3/not-sure"]
            nil [controls true false]))])

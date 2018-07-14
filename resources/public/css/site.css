@@ -34,6 +34,9 @@ h5 {
   font-size: 0.6em;
   margin: 1.5em 0;
 }
+p {
+  line-height: 1.1em;
+}
 input {
   font-weight: 300;
 }
@@ -121,7 +124,7 @@ header p {
   justify-content: center;
   margin-bottom: 0.5em;
 }
-.bubble {
+.bubbles-wrap .bubble {
   font-size: 1.5em;
   font-weight: 500;
   text-align: center;
@@ -143,7 +146,7 @@ header p {
   -ms-user-select: none;
   user-select: none;
 }
-.bubble .text {
+.bubbles-wrap .bubble .text {
   width: 100%;
 }
 .controls {
@@ -166,49 +169,63 @@ header p {
   color: #23527C;
   cursor: pointer;
 }
-form.web-select-secondary {
+form {
   font-size: 2em;
   text-align: left;
   width: 300px;
   margin: 0 auto;
 }
-form.web-select-secondary label {
+form label {
   margin-left: 0.5em;
   font-weight: 300;
   display: inline;
   vertical-align: middle;
 }
-form.web-select-secondary input {
+form input {
   display: inline;
   vertical-align: middle;
 }
-.iframe-container {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 129.41%;
-}
-.iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-#pdf {
+.pdf-prev #pdf {
+  font-weight: 500;
   width: 790px;
-  padding: 20px 40px;
+  padding: 20px 35px 20px 50px;
   margin: 0 auto;
   text-align: left;
 }
-#pdf .title,
-#pdf .contact {
-  color: #eb5757;
+.pdf-prev #pdf img.logo {
+  width: 35px;
+  opacity: 0.65;
+  outline: 0;
 }
-#pdf img.logo {
-  width: 75px;
-  opacity: 0.5;
+.pdf-prev #pdf .title {
+  color: #bb6bd9;
 }
-.redish {
-  color: #eb5757;
+.pdf-prev #pdf .specs {
+  color: gray;
+  font-weight: 400;
+}
+.pdf-prev #pdf ul li {
+  list-style-type: none;
+  padding-left: 0.25em;
+}
+.pdf-prev #pdf ul li:before {
+  content: '○  ';
+}
+.pdf-prev #pdf ul li span {
+  padding-left: 0.5em;
+}
+.pdf-prev #pdf ol {
+  padding-left: 0;
+  list-style-position: inside;
+}
+.pdf-prev #pdf ol p {
+  margin: 0;
+}
+.pdf-prev #pdf .list-items div {
+  display: inline-block;
+}
+.pdf-prev #pdf .footer p {
+  margin-bottom: 0;
+  margin-right: 0.5em;
+  line-height: 1.1em;
 }
