@@ -14,7 +14,7 @@
     ;; only one is true at a time
     :step-2 nil ;:website, :mobile-app, :service-integration, :not-sure, or :installation
     :step-3 {:website {:primary nil ;:gallery-portfolio, :sell-online, :blogging, :business-website, :other
-                       :secondary []
+                       :secondary #{}
                        :platform? nil
                        :platform-name nil
                        :integrations []
