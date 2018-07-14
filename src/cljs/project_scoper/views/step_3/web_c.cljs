@@ -13,18 +13,18 @@
            [:h2 "do you have a platform in mind?"]
            [:h2 "are you using a specific platform?"]))
        [:div.bubbles-wrap
-        [bubble :green "yes" :platform?]
-        [bubble :blue "no" :platform?]]
+        [bubble :green "yes" :platform? [:project-scope :step-3 :website :platform?] true]
+        [bubble :blue "no" :platform? [:project-scope :step-3 :website :platform?] false]]
        (let [platform? @(rf/subscribe [::subs/platform?])]
            (if-not (nil? platform?)
-             (if (= platform? :yes)
+             (if (= platform? true)
                [:div
-                [short-text "platform name" :platform-name]
+                [short-text "platform name" [:project-scope :step-3 :website :platform-name]]
                 (let [platform-name @(rf/subscribe [::subs/platform-name])]
                   (if-not (nil? platform-name)
-                    [controls true (name platform?)]
+                    [controls true true]
                     [controls true nil]))]
                [:div
-                 (rf/dispatch [::events/set-value :platform-name nil])
-                 [controls true (name platform?)]])
+                 (rf/dispatch [::events/set-value [:project-scope :step-3 :website :platform-name] nil])
+                 [controls true true]])
              [controls true nil]))])

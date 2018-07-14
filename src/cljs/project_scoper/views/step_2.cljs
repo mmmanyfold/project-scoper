@@ -11,11 +11,11 @@
            [:h2 "type of project:"]
            [:h2 "what type of thing is it?"]))
        [:div.bubbles-wrap
-        [bubble :green "website" :type]
-        [bubble :blue "mobile app" :type]
-        [bubble :purple "service or integration" :type]
-        [bubble :yellow "interactive installation" :type]
-        [bubble :red "not sure" :type]]
+        [bubble :green "website" :type [:project-scope :step-2] :website]
+        [bubble :blue "mobile app" :type [:project-scope :step-2] :mobile-app]
+        [bubble :purple "service or integration" :type [:project-scope :step-2] :service-integration]
+        [bubble :yellow "interactive installation" :type [:project-scope :step-2] :installation]
+        [bubble :red "not sure" :type [:project-scope :step-2] :not-sure]]
        (let [type @(rf/subscribe [::subs/type])
              _ (js/console.log type)]
          (case type

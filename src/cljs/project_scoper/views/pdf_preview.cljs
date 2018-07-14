@@ -1,7 +1,7 @@
 (ns project-scoper.views.pdf-preview
   (:require cljsjs.jspdf
             cljsjs.html2canvas
-            [project-scoper.components.bubble :refer [bubble]]))
+            [project-scoper.components.controls :refer [controls]]))
 
 (defn main []
   (let [handle-download

@@ -8,11 +8,11 @@
   [:div
    [:h2 "primary purpose:"]
    [:div.bubbles-wrap
-    [bubble :green "gallery / portfolio" :primary]
-    [bubble :blue "sell online" :primary]
-    [bubble :purple "blogging" :primary]
-    [bubble :yellow "share business info" :primary]
-    [bubble :red "other" :primary]]
+    [bubble :green "gallery / portfolio" :primary [:project-scope :step-3 :website :primary] :gallery-portfolio]
+    [bubble :blue "sell online" :primary [:project-scope :step-3 :website :primary] :sell-online]
+    [bubble :purple "blogging" :primary [:project-scope :step-3 :website :primary] :blogging]
+    [bubble :yellow "business website" :primary [:project-scope :step-3 :website :primary] :business-website]
+    [bubble :red "other" :primary [:project-scope :step-3 :website :primary] :other]]
    (let [primary @(rf/subscribe [::subs/primary])]
      (if-not (nil? primary)
        [controls true (name primary)]

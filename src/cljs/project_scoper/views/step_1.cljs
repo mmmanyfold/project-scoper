@@ -8,8 +8,8 @@
   [:div
    [:h2 "I need to..."]
    [:div.bubbles-wrap
-    [bubble :green "start from scratch" :path]
-    [bubble :blue "build on an existing project" :path]]
+    [bubble :green "start from scratch" :path [:project-scope :step-1] :start-from-scratch]
+    [bubble :blue "build on an existing project" :path [:project-scope :step-1] :build-on-existing-project]]
    (let [path @(rf/subscribe [::subs/path])]
      (when path
        [controls false (name path) "/#/step/2"]))])
