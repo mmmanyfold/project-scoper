@@ -23,32 +23,23 @@
             (rf/dispatch [::events/set-active-view :step-1]))
   (defroute "/step/2" []
             (rf/dispatch [::events/set-active-view :step-2]))
-  (defroute "/step/3/website/a" []
-            (rf/dispatch [::events/set-active-view :web-a]))
-  (defroute "/step/3/website/b" []
-            (rf/dispatch [::events/set-active-view :web-b]))
-  (defroute "/step/3/website/c" []
-            (rf/dispatch [::events/set-active-view :web-c]))
-  (defroute "/step/3/website/d" []
-            (rf/dispatch [::events/set-active-view :integrations]))
-  (defroute "/step/3/website/e" []
-            (rf/dispatch [::events/set-active-view :users]))
-  (defroute "/step/3/website/f" []
-            (rf/dispatch [::events/set-active-view :design]))
-  (defroute "/step/3/mobile-app/a" []
-            (rf/dispatch [::events/set-active-view :mobile-a]))
-  (defroute "/step/3/mobile-app/b" []
-            (rf/dispatch [::events/set-active-view :integrations]))
-  (defroute "/step/3/mobile-app/c" []
-            (rf/dispatch [::events/set-active-view :users]))
-  (defroute "/step/3/mobile-app/d" []
-            (rf/dispatch [::events/set-active-view :design]))
-  (defroute "/step/3/service" []
-            (rf/dispatch [::events/set-active-view :description]))
-  (defroute "/step/3/installation" []
-            (rf/dispatch [::events/set-active-view :description]))
-  (defroute "/step/3/not-sure" []
-            (rf/dispatch [::events/set-active-view :description]))
+  (defroute "/step/3/website/:step" [step]
+            (case step
+              "a" (rf/dispatch [::events/set-active-view :web-a])
+              "b" (rf/dispatch [::events/set-active-view :web-b])
+              "c" (rf/dispatch [::events/set-active-view :web-c])
+              "d" (rf/dispatch [::events/set-active-view :integrations])
+              "e" (rf/dispatch [::events/set-active-view :users])
+              "f" (rf/dispatch [::events/set-active-view :design])))
+  (defroute "/step/3/mobile-app/:step" [step]
+            (case step
+              "a" (rf/dispatch [::events/set-active-view :mobile-a])
+              "b" (rf/dispatch [::events/set-active-view :integrations])
+              "c" (rf/dispatch [::events/set-active-view :users])
+              "d" (rf/dispatch [::events/set-active-view :design])))
+  (defroute "/step/3/:type" [type]
+            (when (some #{type} ["service" "installation" "not-sure"])
+              (rf/dispatch [::events/set-active-view :description])))
   (defroute "/step/4" []
             (rf/dispatch [::events/set-active-view :step-4]))
   (defroute "/step/5" []
