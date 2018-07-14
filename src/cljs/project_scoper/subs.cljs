@@ -14,17 +14,17 @@
 (re-frame/reg-sub
   ::path
   (fn [db _]
-    (:path db)))
+    (get-in db [:project-scope :step-1])))
 
 (re-frame/reg-sub
   ::type
   (fn [db _]
-    (:type db)))
+    (get-in db [:project-scope :step-2])))
 
 (re-frame/reg-sub
   ::primary
   (fn [db _]
-    (:primary db)))
+    (get-in db [:project-scope :step-3 :website :primary])))
 
 (re-frame/reg-sub
   ::secondary
@@ -34,12 +34,12 @@
 (re-frame/reg-sub
   ::platform?
   (fn [db _]
-    (:platform? db)))
+    (get-in db [:project-scope :step-3 :website :platform?])))
 
 (re-frame/reg-sub
   ::platform-name
   (fn [db _]
-    (:platform-name db)))
+    (get-in db [:project-scope :step-3 :website :platform-name])))
 
 (re-frame/reg-sub
   ::contact-name
@@ -54,26 +54,39 @@
 (re-frame/reg-sub
   ::platform
   (fn [db _]
-   (:platform db)))
+   (get-in db [:project-scope :step-3 :mobile-app :platform])))
 
 (re-frame/reg-sub
   ::user-accounts?
   (fn [db _]
-    (get-in db [:step-3 :website :user-accounts?])))
+    (let [type (get-in db [:project-scope :step-2])]
+      (get-in db [:project-scope :step-3 type :user-accounts?]))))
 
 (re-frame/reg-sub
   ::design-provided?
   (fn [db _]
-    (get-in db [:step-3 :website :design-provided?])))
+    (let [type (get-in db [:project-scope :step-2])]
+      (get-in db [:project-scope :step-3 type :design-provided?]))))
 
 (re-frame/reg-sub
   ::design-provided
   (fn [db _]
-    (get-in db [:step-3 :website :design-provided])))
+    (let [type (get-in db [:project-scope :step-2])]
+      (get-in db [:project-scope :step-3 type :design-provided]))))
 
 ;TODO add logic to change :website to either mobile-app or website based on path
 
 (re-frame/reg-sub
   ::deadline-type
   (fn [db _]
-    (get-in db [:step-4 :deadline-type])))
+    (get-in db [:project-scope :step-4 :deadline-type])))
+
+(re-frame/reg-sub
+  ::deadline
+  (fn [db _]
+    (get-in db [:project-scope :step-4 :deadline])))
+
+(re-frame/reg-sub
+  ::start-date
+  (fn [db _]
+    (get-in db [:project-scope :step-4 :deadline])))
