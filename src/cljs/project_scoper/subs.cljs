@@ -40,7 +40,17 @@
   ::platform-name
   (fn [db _]
     (:platform-name db)))
-  
+
+(re-frame/reg-sub
+  ::contact-name
+  (fn [db _]
+    (:contact-name db)))
+
+(re-frame/reg-sub
+  ::contact-email
+  (fn [db _]
+    (:contact-email db)))
+
 (re-frame/reg-sub
   ::platform
   (fn [db _]

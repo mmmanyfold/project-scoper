@@ -13,7 +13,8 @@
             [project-scoper.views.step-3.shared-design :refer [design-view]]
             [project-scoper.views.step-3.shared-description :refer [description-view]]
             [project-scoper.views.step-4 :refer [step-4-view]]
-            [project-scoper.views.step-5 :refer [step-5-view]]))
+            [project-scoper.views.step-5 :refer [step-5-view]]
+            [project-scoper.views.step-6 :refer [step-6-view]]))
 
 (defn- views [view-name]
        (case view-name
@@ -29,6 +30,7 @@
              :description [description-view]
              :step-4 [step-4-view]
              :step-5 [step-5-view]
+             :step-6 [step-6-view]
              :pdf-preview [pdf-preview/main]
              [:div [:h1 404] [:p [:a {:href "/"} "Return home"]]]))
 
