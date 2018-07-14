@@ -1,13 +1,10 @@
-(ns project-scoper.components.controls
-  (:require [re-frame.core :as rf]
-            [project-scoper.events :as events]
-            [project-scoper.subs :as subs]))
+(ns project-scoper.components.controls)
 
-(defn controls [back? selection]
+(defn controls [back? selection next]
   [:div.controls
    (when back?
-     [:span {:on-click #(rf/dispatch [::events/navigate-back])}
+     [:a {:on-click #(.back (.-history js/window))}
       [:h3 [:i {:class "zmdi zmdi-caret-left"}] " back"]])
    (when selection
-     [:span {:on-click #(rf/dispatch [::events/navigate-forward selection])}
+     [:a {:href next}
       [:h3 "next " [:i {:class "zmdi zmdi-caret-right"}]]])])
