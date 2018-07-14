@@ -7,7 +7,6 @@
             [re-frame.core :as rf]
             [project-scoper.events :as events]))
 
-
 (defn hook-browser-navigation! []
   (doto (History.)
     (gevents/listen
@@ -24,25 +23,25 @@
             (rf/dispatch [::events/set-active-view :step-1]))
   (defroute "/step/2" []
             (rf/dispatch [::events/set-active-view :step-2]))
-  (defroute "/step/3/web/a" []
+  (defroute "/step/3/website/a" []
             (rf/dispatch [::events/set-active-view :web-a]))
-  (defroute "/step/3/web/b" []
+  (defroute "/step/3/website/b" []
             (rf/dispatch [::events/set-active-view :web-b]))
-  (defroute "/step/3/web/c" []
+  (defroute "/step/3/website/c" []
             (rf/dispatch [::events/set-active-view :web-c]))
-  (defroute "/step/3/web/d" []
+  (defroute "/step/3/website/d" []
             (rf/dispatch [::events/set-active-view :integrations]))
-  (defroute "/step/3/web/e" []
+  (defroute "/step/3/website/e" []
             (rf/dispatch [::events/set-active-view :users]))
-  (defroute "/step/3/web/f" []
+  (defroute "/step/3/website/f" []
             (rf/dispatch [::events/set-active-view :design]))
-  (defroute "/step/3/mobile/a" []
+  (defroute "/step/3/mobile-app/a" []
             (rf/dispatch [::events/set-active-view :mobile-a]))
-  (defroute "/step/3/mobile/b" []
+  (defroute "/step/3/mobile-app/b" []
             (rf/dispatch [::events/set-active-view :integrations]))
-  (defroute "/step/3/mobile/c" []
+  (defroute "/step/3/mobile-app/c" []
             (rf/dispatch [::events/set-active-view :users]))
-  (defroute "/step/3/mobile/d" []
+  (defroute "/step/3/mobile-app/d" []
             (rf/dispatch [::events/set-active-view :design]))
   (defroute "/step/3/service" []
             (rf/dispatch [::events/set-active-view :description]))

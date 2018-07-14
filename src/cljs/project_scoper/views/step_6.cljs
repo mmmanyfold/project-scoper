@@ -1,6 +1,5 @@
 (ns project-scoper.views.step-6
   (:require [re-frame.core :as rf]
-            [project-scoper.components.bubble :refer [bubble]]
             [project-scoper.components.short-text :refer [short-text]]
             [project-scoper.components.controls :refer [controls]]
             [project-scoper.subs :as subs]

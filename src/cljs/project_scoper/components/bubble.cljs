@@ -1,8 +1,6 @@
 (ns project-scoper.components.bubble
   (:require [re-frame.core :as rf]
-            [reagent.core :as reagent]
             [project-scoper.events :as events]
-            [project-scoper.subs :as subs]
             [project-scoper.helpers :refer [keywordize-name]]))
 
 (def colors {:red "#EB5757"
@@ -11,10 +9,9 @@
              :purple "#BB6BD9"
              :yellow "#F2C94C"})
 
-(defn bubble [color-key text db-key]
+(defn bubble [color-key text sub db-key value]
   (let [color-val (color-key colors)
-        db-value (keywordize-name text)
-        selected? (= @(rf/subscribe [(keyword (str "project-scoper.subs/" (name db-key)))]) db-value)]
+        selected? (= @(rf/subscribe [(keyword (str "project-scoper.subs/" (name sub)))]) value)] ;construct full subscription from sub name
     [:div.bubble {:style {:border-color color-val
                           :background-color (if selected?
                                               color-val
@@ -22,5 +19,5 @@
                           :color (if selected?
                                    "white"
                                    color-val)}
-                  :on-click #(rf/dispatch [::events/set-value db-key db-value])}
+                  :on-click #(rf/dispatch [::events/set-value db-key value])}
       [:div.text text]]))

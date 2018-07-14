@@ -8,11 +8,11 @@
   [:div
     [:h2 "Platform:"]
     [:div.bubbles-wrap
-      [bubble :green "iOS" :platform]
-      [bubble :purple "Android" :platform]
-      [bubble :blue "iOS & Android" :platform]
-      [bubble :yellow "Don't Care" :platform]
+      [bubble :green "iOS" :platform [:project-scope :step-3 :mobile-app :platform] :ios]
+      [bubble :purple "Android" :platform [:project-scope :step-3 :mobile-app :platform] :android]
+      [bubble :blue "iOS & Android" :platform [:project-scope :step-3 :mobile-app :platform] :both]
+      [bubble :yellow "Don't Care" :platform [:project-scope :step-3 :mobile-app :platform] :any]]
       (let [platform @(rf/subscribe [::subs/platform])]
         (if-not (nil? platform)
           [controls true (name platform)]
-          [controls true nil]))]])
+          [controls true nil]))])

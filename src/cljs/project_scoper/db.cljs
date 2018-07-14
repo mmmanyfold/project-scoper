@@ -9,32 +9,19 @@
    ;; new data model
    :project-scope
 
-   {:step-1 #{:start-from-scratch
-              :build-on-existing-project}
+   {:step-1 nil ;:start-from-scratch, or :build-on-existing-project
 
     ;; only one is true at a time
-    :step-2 {:website? false
-             :mobile-app? false
-             :service-integration? false
-             :not-sure? false
-             :installation? false}
-
-    :step-3 {:website {:primary #{:gallery-portfolio
-                                  :sell-online
-                                  :blogging
-                                  :custom-platform
-                                  :online-presence
-                                  :other}
+    :step-2 nil ;:website, :mobile-app, :service-integration, :not-sure, or :installation
+    :step-3 {:website {:primary nil ;:gallery-portfolio, :sell-online, :blogging, :business-website, :other
                        :secondary []
+                       :platform? nil
                        :platform-name nil
                        :integrations []
                        :user-accounts? false
                        :design-provided? false
                        :design-provided []}
-             :mobile-app {:platform #{:ios
-                                      :android
-                                      :both
-                                      :any}
+             :mobile-app {:platform nil ;:ios, :android, :both, or :any
                           :integrations []
                           :user-accounts? false
                           :design-provided? false
@@ -45,7 +32,7 @@
              :not-sure nil}
 
     ;; timeline
-    :step-4 {:deadline-type #{:hard :soft}
+    :step-4 {:deadline-type nil ;:hard or :soft
              :deadline nil ;; use Date obj
              :start-date nil}
 

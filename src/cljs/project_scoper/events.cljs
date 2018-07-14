@@ -17,7 +17,7 @@
 (re-frame/reg-event-db
   ::set-value
   (fn [db [_ db-key value]]
-    (assoc db db-key value)))
+    (assoc-in db db-key value)))
 
 (re-frame/reg-event-db
   ::navigate-back
