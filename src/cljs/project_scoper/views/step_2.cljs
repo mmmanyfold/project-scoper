@@ -15,7 +15,7 @@
         [bubble :blue "mobile app" :type]
         [bubble :purple "service or integration" :type]
         [bubble :yellow "interactive installation" :type]
-        [bubble :red "not sure" :type]]
+        [bubble :red "other / not sure" :type]]
        (let [type @(rf/subscribe [::subs/type])]
          (if-not (nil? type)
            [controls "" (name type)]

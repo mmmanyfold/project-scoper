@@ -23,7 +23,8 @@
                                   :sell-online
                                   :blogging
                                   :custom-platform
-                                  :online-presence}
+                                  :online-presence
+                                  :other}
                        :secondary []
                        :platform-name nil
                        :integrations []
